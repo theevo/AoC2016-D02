@@ -1,5 +1,5 @@
 //
-//  Keys.swift
+//  Key.swift
 //  AOC2016-D02
 //
 //  Created by Theo Vora on 7/11/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Keys {
+enum Key {
     case k1
     case k2
     case k3
