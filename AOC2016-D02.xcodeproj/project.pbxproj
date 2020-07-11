@@ -12,6 +12,7 @@
 		ACA5478E24BA7BA400309B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA5478D24BA7BA400309B58 /* Assets.xcassets */; };
 		ACA5479124BA7BA400309B58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA5479024BA7BA400309B58 /* Preview Assets.xcassets */; };
 		ACA5479424BA7BA400309B58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA5479224BA7BA400309B58 /* LaunchScreen.storyboard */; };
+		ACA5479D24BA809000309B58 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5479C24BA809000309B58 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		ACA5479024BA7BA400309B58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACA5479324BA7BA400309B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA5479524BA7BA400309B58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACA5479C24BA809000309B58 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		ACA5478824BA7BA200309B58 /* AOC2016-D02 */ = {
 			isa = PBXGroup;
 			children = (
+				ACA5479B24BA801A00309B58 /* Models */,
 				ACA5478924BA7BA200309B58 /* AppDelegate.swift */,
 				ACA5478B24BA7BA200309B58 /* ContentView.swift */,
 				ACA5478D24BA7BA400309B58 /* Assets.xcassets */,
@@ -70,6 +73,14 @@
 				ACA5479024BA7BA400309B58 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACA5479B24BA801A00309B58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACA5479C24BA809000309B58 /* Keys.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA5478C24BA7BA200309B58 /* ContentView.swift in Sources */,
+				ACA5479D24BA809000309B58 /* Keys.swift in Sources */,
 				ACA5478A24BA7BA200309B58 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
