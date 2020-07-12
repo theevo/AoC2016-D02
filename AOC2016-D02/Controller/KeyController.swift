@@ -13,21 +13,45 @@ class KeyController {
     
     var currentKey = Key.k5
     
-    var arrayOfDirections = [Direction]()
+    var arrayOfDirections = [[Direction]]()
     
     init() {
-        loadMockData()
+        loadInputFile()
     }
     
-    func loadMockData() {
-        let string = "ULL"
+    // MARK: - Private Functions
+    
+    private func loadInputFile() {
+        if let filepath = Bundle.main.path(forResource: "input", ofType: "") {
+            var lines: [String] = []
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                lines = contents.components(separatedBy: "\n").filter({ !$0.isEmpty })
+                
+                tokenize(lines)
+                
+            } catch {
+                print(error)
+            }
+        } else {
+            print("didn't find the file!")
+        }
+    }
+    
+    private func tokenize(_ lines: [String]) {
         
-        for char in string {
-            if let direction = Direction(char) {
-                arrayOfDirections.append(direction)
+        arrayOfDirections = Array(repeating: [], count: lines.count)
+        
+        for i in 0..<lines.count {
+            
+            let string = lines[i]
+            
+            for char in string {
+                if let direction = Direction(char) {
+                    arrayOfDirections[i].append(direction)
+                }
             }
         }
-        
-        print(arrayOfDirections)
     }
+    
 }
