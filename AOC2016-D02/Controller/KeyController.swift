@@ -11,12 +11,15 @@ import Foundation
 class KeyController {
     static let shared = KeyController()
     
-    var currentKey = Key.k5
+    var combination = [Key]()
+    
+    private var currentKey = Key.k5
     
     var arrayOfDirections = [[Direction]]()
     
     init() {
         loadInputFile()
+        run()
     }
     
     // MARK: - Private Functions
@@ -51,6 +54,25 @@ class KeyController {
                     arrayOfDirections[i].append(direction)
                 }
             }
+        }
+    }
+    
+    /// Parse the input file and determine the numbers of each line
+    private func run() {
+        
+        // initialize combination
+        combination = Array(repeating: .k1, count: arrayOfDirections.count)
+        
+        // step through each line
+        for i in 0..<arrayOfDirections.count {
+            
+            // step through each direction
+            for d in arrayOfDirections[i] {
+                currentKey = currentKey.go(d)
+            }
+            
+            print(currentKey)
+            combination[i] = currentKey
         }
     }
     
