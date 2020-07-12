@@ -11,9 +11,9 @@ import Foundation
 class KeyController {
     static let shared = KeyController()
     
-    var combination = [Key]()
+    var combination = [CrazyKey]()
     
-    private var currentKey = Key.k5
+    private var currentKey = CrazyKey.k5
     
     var arrayOfDirections = [[Direction]]()
     

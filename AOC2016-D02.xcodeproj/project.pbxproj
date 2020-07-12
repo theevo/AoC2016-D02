@@ -16,6 +16,7 @@
 		ACA547A024BA825000309B58 /* KeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5479F24BA825000309B58 /* KeyController.swift */; };
 		ACA547A224BA83EB00309B58 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA547A124BA83EB00309B58 /* Direction.swift */; };
 		ACA547A524BAA16600309B58 /* input in Resources */ = {isa = PBXBuildFile; fileRef = ACA547A424BAA16600309B58 /* input */; };
+		ACA547A724BB89C900309B58 /* CrazyKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA547A624BB89C900309B58 /* CrazyKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ACA5479F24BA825000309B58 /* KeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyController.swift; sourceTree = "<group>"; };
 		ACA547A124BA83EB00309B58 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		ACA547A424BAA16600309B58 /* input */ = {isa = PBXFileReference; lastKnownFileType = text; path = input; sourceTree = "<group>"; };
+		ACA547A624BB89C900309B58 /* CrazyKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrazyKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA5479C24BA809000309B58 /* Key.swift */,
+				ACA547A624BB89C900309B58 /* CrazyKey.swift */,
 				ACA547A124BA83EB00309B58 /* Direction.swift */,
 			);
 			path = Models;
@@ -185,6 +188,7 @@
 				ACA5478A24BA7BA200309B58 /* AppDelegate.swift in Sources */,
 				ACA547A224BA83EB00309B58 /* Direction.swift in Sources */,
 				ACA547A024BA825000309B58 /* KeyController.swift in Sources */,
+				ACA547A724BB89C900309B58 /* CrazyKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
