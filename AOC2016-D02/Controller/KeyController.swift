@@ -13,7 +13,7 @@ class KeyController {
     
     var combination = [CrazyKey]()
     
-    private var currentKey = CrazyKey.k5
+    var currentKey = CrazyKey.k5
     
     var arrayOfDirections = [[Direction]]()
     

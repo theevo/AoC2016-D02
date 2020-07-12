@@ -10,28 +10,19 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var buttonTracker = "\(KeyController.shared.combination)"
+    @State var combo0 = "\(KeyController.shared.combination[0])"
+    @State var combo1 = "\(KeyController.shared.combination[1])"
+    @State var combo2 = "\(KeyController.shared.combination[2])"
+    @State var combo3 = "\(KeyController.shared.combination[3])"
+    @State var combo4 = "\(KeyController.shared.combination[4])"
     
     var body: some View {
-        VStack {
-            Text(buttonTracker)
-            Button(action: {
-                self.buttonTracker = "You pressed Button 1"
-            }) {
-                Text("Button 1")
-            }
-            
-            Button(action: {
-                self.buttonTracker = "You pressed Button 2"
-            }) {
-                Text("Button 2")
-            }
-            
-            Button(action: {
-                self.buttonTracker = "You pressed the heart"
-            }) {
-                Image(systemName: "heart")
-            }
+        HStack {
+            Text(combo0)
+            Text(combo1)
+            Text(combo2)
+            Text(combo3)
+            Text(combo4)
         }
     }
     
