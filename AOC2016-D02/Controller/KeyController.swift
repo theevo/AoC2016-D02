@@ -57,10 +57,23 @@ class KeyController {
         }
     }
     
+    /// Parse the input file and determine the numbers of each line
     private func run() {
-        print("release the secret weapon!")
         
+        // initialize combination
         combination = Array(repeating: .k1, count: arrayOfDirections.count)
+        
+        // step through each line
+        for i in 0..<arrayOfDirections.count {
+            
+            // step through each direction
+            for d in arrayOfDirections[i] {
+                currentKey = currentKey.go(d)
+            }
+            
+            print(currentKey)
+            combination[i] = currentKey
+        }
     }
     
 }
