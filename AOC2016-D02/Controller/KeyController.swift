@@ -11,12 +11,15 @@ import Foundation
 class KeyController {
     static let shared = KeyController()
     
-    var currentKey = Key.k5
+    var combination = [Key]()
+    
+    private var currentKey = Key.k5
     
     var arrayOfDirections = [[Direction]]()
     
     init() {
         loadInputFile()
+        run()
     }
     
     // MARK: - Private Functions
@@ -52,6 +55,12 @@ class KeyController {
                 }
             }
         }
+    }
+    
+    private func run() {
+        print("release the secret weapon!")
+        
+        combination = Array(repeating: .k1, count: arrayOfDirections.count)
     }
     
 }

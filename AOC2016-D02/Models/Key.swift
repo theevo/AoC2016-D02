@@ -18,29 +18,6 @@ enum Key {
     case k7
     case k8
     case k9
-    
-    var str: String {
-        switch self {
-        case .k1:
-            return "1"
-        case .k2:
-            return "2"
-        case .k3:
-            return "3"
-        case .k4:
-            return "4"
-        case .k5:
-            return "5"
-        case .k6:
-            return "6"
-        case .k7:
-            return "7"
-        case .k8:
-            return "8"
-        case .k9:
-            return "9"
-        }
-    }
 }
 
 extension Key {
@@ -114,6 +91,31 @@ extension Key {
             case .k8:
                 return .k9
             }
+        }
+    }
+}
+
+extension Key: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .k1:
+            return "1"
+        case .k2:
+            return "2"
+        case .k3:
+            return "3"
+        case .k4:
+            return "4"
+        case .k5:
+            return "5"
+        case .k6:
+            return "6"
+        case .k7:
+            return "7"
+        case .k8:
+            return "8"
+        case .k9:
+            return "9"
         }
     }
 }
