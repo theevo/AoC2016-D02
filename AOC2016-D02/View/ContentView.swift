@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var buttonTracker = "Press something"
+    @State var buttonTracker = "\(KeyController.shared.arrayOfDirections)"
     
     var body: some View {
         VStack {
