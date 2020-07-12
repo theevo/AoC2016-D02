@@ -10,19 +10,38 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var combo0 = "\(KeyController.shared.combination[0])"
-    @State var combo1 = "\(KeyController.shared.combination[1])"
-    @State var combo2 = "\(KeyController.shared.combination[2])"
-    @State var combo3 = "\(KeyController.shared.combination[3])"
-    @State var combo4 = "\(KeyController.shared.combination[4])"
+    @State var combo0 = "-"
+    @State var combo1 = "-"
+    @State var combo2 = "-"
+    @State var combo3 = "-"
+    @State var combo4 = "-"
     
     var body: some View {
-        HStack {
-            Text(combo0)
-            Text(combo1)
-            Text(combo2)
-            Text(combo3)
-            Text(combo4)
+        VStack {
+            HStack {
+                Text(combo0)
+                Text(combo1)
+                Text(combo2)
+                Text(combo3)
+                Text(combo4)
+            }
+            
+            Button(action: {
+                print("Running!")
+                
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[0] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo0 = "\(k)"
+                        }
+                        print(k)
+                        usleep(50000) // 0.005 of 1 second
+                    }
+                }
+            }) {
+                Image(systemName: "play")
+            }
         }
     }
     
