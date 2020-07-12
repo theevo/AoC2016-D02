@@ -14,4 +14,20 @@ class KeyController {
     var currentKey = Key.k5
     
     var arrayOfDirections = [Direction]()
+    
+    init() {
+        loadMockData()
+    }
+    
+    func loadMockData() {
+        let string = "ULL"
+        
+        for char in string {
+            if let direction = Direction(char) {
+                arrayOfDirections.append(direction)
+            }
+        }
+        
+        print(arrayOfDirections)
+    }
 }

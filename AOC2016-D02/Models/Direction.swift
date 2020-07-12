@@ -16,7 +16,7 @@ enum Direction {
 }
 
 extension Direction {
-    init?(_ str: String) {
+    init?(_ str: String.Element) {
         switch str.uppercased() {
         case "U":
             self = .up
@@ -28,6 +28,21 @@ extension Direction {
             self = .right
         default:
             return nil
+        }
+    }
+}
+
+extension Direction: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .up:
+            return "Up"
+        case .down:
+            return "Down"
+        case .left:
+            return "Left"
+        case .right:
+            return "Right"
         }
     }
 }
