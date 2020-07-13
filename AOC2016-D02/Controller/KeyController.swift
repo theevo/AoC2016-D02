@@ -13,12 +13,26 @@ class KeyController {
     
     var combination = [CrazyKey]()
     
-    private var currentKey = CrazyKey.k5
+    var currentKey = CrazyKey.k5
     
     var arrayOfDirections = [[Direction]]()
+    var arrayOfKeys = [[CrazyKey]]()
+    
+    var inputFileCharCont: Int {
+        var c = 0
+        
+        for line in arrayOfKeys {
+            c += line.count
+        }
+        
+        return c
+    }
     
     init() {
         loadInputFile()
+        
+        setupOutputProperties()
+        
         run()
     }
     
@@ -57,11 +71,17 @@ class KeyController {
         }
     }
     
-    /// Parse the input file and determine the numbers of each line
-    private func run() {
-        
+    private func setupOutputProperties() {
         // initialize combination
         combination = Array(repeating: .k1, count: arrayOfDirections.count)
+        
+        // initialize arrayOfKeys
+        arrayOfKeys = Array(repeating: [], count: arrayOfDirections.count)
+        arrayOfKeys[0].append(currentKey)
+    }
+    
+    /// Parse the input file and determine the numbers of each line
+    private func run() {
         
         // step through each line
         for i in 0..<arrayOfDirections.count {
@@ -69,11 +89,13 @@ class KeyController {
             // step through each direction
             for d in arrayOfDirections[i] {
                 currentKey = currentKey.go(d)
+                arrayOfKeys[i].append(currentKey)
             }
             
-            print(currentKey)
             combination[i] = currentKey
         }
+        
+//        print(combination)
     }
     
 }

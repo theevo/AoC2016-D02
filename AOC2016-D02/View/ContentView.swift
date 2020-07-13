@@ -10,27 +10,84 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var buttonTracker = "\(KeyController.shared.combination)"
+    @State var combo0 = "-"
+    @State var combo1 = "-"
+    @State var combo2 = "-"
+    @State var combo3 = "-"
+    @State var combo4 = "-"
+    @State var currentCount = 0
+    
+    let sleepTime: UInt32 = 15000 // 0.0025 of 1 second
     
     var body: some View {
         VStack {
-            Text(buttonTracker)
-            Button(action: {
-                self.buttonTracker = "You pressed Button 1"
-            }) {
-                Text("Button 1")
+            Spacer()
+            HStack {
+                Text(combo0)
+                Text(combo1)
+                Text(combo2)
+                Text(combo3)
+                Text(combo4)
             }
             
             Button(action: {
-                self.buttonTracker = "You pressed Button 2"
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[0] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo0 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[1] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo1 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[2] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo2 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[3] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo3 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[4] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo4 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
             }) {
-                Text("Button 2")
+                Image(systemName: "play")
             }
-            
-            Button(action: {
-                self.buttonTracker = "You pressed the heart"
-            }) {
-                Image(systemName: "heart")
+            Spacer()
+            HStack {
+                Text("\(currentCount)")
+                Text("\(KeyController.shared.inputFileCharCont)")
             }
         }
     }
