@@ -15,9 +15,13 @@ struct ContentView: View {
     @State var combo2 = "-"
     @State var combo3 = "-"
     @State var combo4 = "-"
+    @State var currentCount = 0
+    
+    let sleepTime: UInt32 = 15000 // 0.0025 of 1 second
     
     var body: some View {
         VStack {
+            Spacer()
             HStack {
                 Text(combo0)
                 Text(combo1)
@@ -27,20 +31,63 @@ struct ContentView: View {
             }
             
             Button(action: {
-                print("Running!")
-                
                 OperationQueue().addOperation {
                     for k in KeyController.shared.arrayOfKeys[0] {
                         
                         OperationQueue.main.addOperation {
                             self.combo0 = "\(k)"
+                            self.currentCount += 1
                         }
-                        print(k)
-                        usleep(50000) // 0.005 of 1 second
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[1] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo1 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[2] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo2 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[3] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo3 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
+                    }
+                }
+                OperationQueue().addOperation {
+                    for k in KeyController.shared.arrayOfKeys[4] {
+                        
+                        OperationQueue.main.addOperation {
+                            self.combo4 = "\(k)"
+                            self.currentCount += 1
+                        }
+                        usleep(self.sleepTime)
                     }
                 }
             }) {
                 Image(systemName: "play")
+            }
+            Spacer()
+            HStack {
+                Text("\(currentCount)")
+                Text("\(KeyController.shared.inputFileCharCont)")
             }
         }
     }

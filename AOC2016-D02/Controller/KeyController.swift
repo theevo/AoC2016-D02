@@ -18,6 +18,16 @@ class KeyController {
     var arrayOfDirections = [[Direction]]()
     var arrayOfKeys = [[CrazyKey]]()
     
+    var inputFileCharCont: Int {
+        var c = 0
+        
+        for line in arrayOfKeys {
+            c += line.count
+        }
+        
+        return c
+    }
+    
     init() {
         loadInputFile()
         
