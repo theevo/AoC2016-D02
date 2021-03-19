@@ -1,5 +1,9 @@
 # Advent of Code 2016 Day 2
 
+https://adventofcode.com/2016/day/2
+
+*A solution by Theo Vora (@theevo)*
+
 ## Summary
 
 This is a working solution built for tvOS with SwiftUI.
